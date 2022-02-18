@@ -1,12 +1,15 @@
 import { NextUIProvider } from '@nextui-org/react';
+import { NextIntlProvider } from 'next-intl';
+
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  
   return (
-  <NextUIProvider>
-    <Component {...pageProps} />
-  </NextUIProvider>
+    <NextIntlProvider messages={pageProps.messages}>
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
+    </NextIntlProvider>
   );
 }
 

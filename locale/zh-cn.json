@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "description": "ClipCC官方网站"
+    },
+    "head": {
+        "title": "lightweight & flexible & powerful",
+        "try": "在线尝试",
+        "download": "下载",
+        "document": "文档"
+    },
+    "body": {
+        "why": "为什么选择ClipCC",
+        "extension": {
+            "title": "扩展支持",
+            "desc": "ClipCC引入了一个新的、比原来的Scratch更强大的扩展系统。它允许扩展通过引入Node模块来直接添加/修改编辑器的内容。你可以看看我们的扩展文档。"
+        },
+        "globalfunc": {
+            "title": "全局函数",
+            "desc": "This feature allows you to call an identical function (or \"custom block\") within any sprite (including stages). Note that the global function acts on the same sprite as the one that defines it!"
+        },
+        "customreporter": {
+            "title": "自定义返回值",
+            "desc": "This feature is suitable for projects that require a lot of recursive operations or need to compress program content. you can eliminate unnecessary variables and blocks by customizing a reporter."
+        },
+        "printtext": {
+            "title": "打印文字",
+            "desc": "This feature allows you to print text on the stage, which can be used to simplify redundant text printing engines, optimize text printing efficiency, etc."
+        },
+        "darkmode": {
+            "title": "黑暗模式",
+            "desc": "Dark Mode is a “dramatic” new look that helps you focus on creating in the dark, creating a distraction-free atmosphere. It's set by default to follow the system."
+        },
+        "opensource": {
+            "title": "开放源码",
+            "desc": "ClipCC is open source and licensed under the AGPL-3.0 license. You can modify and redistribute ClipCC under the same license freely!"
+        }
+    }
+}

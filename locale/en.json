@@ -1,0 +1,38 @@
+{
+    "meta": {
+        "description": "ClipCC's official website."
+    },
+    "head": {
+        "title": "lightweight & flexible & powerful",
+        "try": "Try Online",
+        "download": "Download",
+        "document": "Document"
+    },
+    "body": {
+        "why": "Why choose ClipCC",
+        "extension": {
+            "title": "Extension support",
+            "desc": "ClipCC introduces a new, more powerful extension system than the original Scratch. It allows extensions to add/modify editor content directly with the introduction of node modules. You can look our documentation."
+        },
+        "globalfunc": {
+            "title": "Global function",
+            "desc": "This feature allows you to call an identical function (or \"custom block\") within any sprite (including stages). Note that the global function acts on the same sprite as the one that defines it!"
+        },
+        "customreporter": {
+            "title": "Custom reporter",
+            "desc": "This feature is suitable for projects that require a lot of recursive operations or need to compress program content. you can eliminate unnecessary variables and blocks by customizing a reporter."
+        },
+        "printtext": {
+            "title": "Print text on stage",
+            "desc": "This feature allows you to print text on the stage, which can be used to simplify redundant text printing engines, optimize text printing efficiency, etc."
+        },
+        "darkmode": {
+            "title": "Dark mode",
+            "desc": "Dark Mode is a “dramatic” new look that helps you focus on creating in the dark, creating a distraction-free atmosphere. It's set by default to follow the system."
+        },
+        "opensource": {
+            "title": "Open source",
+            "desc": "ClipCC is open source and licensed under the AGPL-3.0 license. You can modify and redistribute ClipCC under the same license freely!"
+        }
+    }
+}

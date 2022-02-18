@@ -4,14 +4,17 @@ import Image from 'next/image'
 import { Button, Card, Text } from '@nextui-org/react';
 import { Container, Row, Col } from '@nextui-org/react';
 import { Parallax } from 'react-parallax'
+import { useTranslations } from 'next-intl';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const t = useTranslations();
   return (
     <div>
       <Head>
         <title>ClipCC</title>
-        <meta name="description" content="ClipCC's official website." />
+        <meta name="description" content={t('meta.description')} />
+        <meta name="keywords" content="ClipCC,Scratch,Clipteam,Scratch Editor" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
@@ -31,7 +34,7 @@ export default function Home() {
               textGradient: '45deg, $blue500 -20%, $green500 50%'
             }}
           >
-            lightweight & flexible & powerful
+            {t('head.title')}
           </Text>
           <div className={styles.buttons}>
             <Button
@@ -39,14 +42,14 @@ export default function Home() {
               shadow color="primary"
               className={styles.button}
               auto
-            >Try online</Button>
+            >{t('head.try')}</Button>
             <Button
               color="gray200"
               size="lg"
               className={styles.button}
               auto
             >
-              Download
+              {t('head.download')}
             </Button>
             <Button
               color="gray200"
@@ -54,7 +57,7 @@ export default function Home() {
               className={styles.button}
               auto
             >
-              Document
+              {t('head.document')}
             </Button>
           </div>
         </div>
@@ -98,7 +101,7 @@ export default function Home() {
             }}
             className={styles.title}
           >
-            Why choose ClipCC
+            {t('body.why')}
           </Text>
           <Container className={styles.features}>
             <Row justify="center" align="center">
@@ -112,9 +115,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Extension support
+                  {t('body.extension.title')}
                 </Text>
-                ClipCC introduces a new, more powerful extension system than the original Scratch. It allows extensions to add/modify editor content directly with the introduction of node modules. You can look our documentation.
+                {t('body.extension.desc')}
               </Card>
               <Card
                 bordered
@@ -126,9 +129,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Global function
+                  {t('body.globalfunc.title')}
                 </Text>
-                This feature allows you to call an identical function (or "custom block") within any sprite (including stages). Note that the global function acts on the same sprite as the one that defines it!
+                {t('body.globalfunc.desc')}
               </Card>
               <Card
                 bordered
@@ -140,9 +143,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Custom reporter
+                  {t('body.customreporter.title')}
                 </Text>
-                This feature is suitable for projects that require a lot of recursive operations or need to compress program content. you can eliminate unnecessary variables and blocks by customizing a reporter.
+                {t('body.customreporter.desc')}
               </Card>
             </Row>
             <Row justify="center" align="center">
@@ -156,9 +159,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Print text on stage
+                  {t('body.printtext.title')}
                 </Text>
-                This feature allows you to print text on the stage, which can be used to simplify redundant text printing engines, optimize text printing efficiency, etc.
+                {t('body.printtext.desc')}
               </Card>
               <Card
                 bordered
@@ -170,10 +173,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Dark mode
+                  {t('body.darkmode.title')}
                 </Text>
-
-                Dark Mode is a “dramatic” new look that helps you focus on creating in the dark, creating a distraction-free atmosphere. It's set by default to follow the system.
+                {t('body.darkmode.desc')}
               </Card>
               <Card
                 bordered
@@ -185,9 +187,9 @@ export default function Home() {
                   size={21}
                   weight="bold"
                 >
-                  Open source
+                  {t('body.opensource.title')}
                 </Text>
-                ClipCC is open source and licensed under the AGPL-3.0 license. You can modify and redistribute ClipCC under the same license freely!
+                {t('body.opensource.desc')}
               </Card>
             </Row>
           </Container>
@@ -195,17 +197,16 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        &copy; {(new Date).getFullYear()}&nbsp;<strong>Clipteam</strong>&nbsp;all rights reserved
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps({locale}) {
+  return {
+    props: {
+      messages: (await import(`../locale/${locale}.json`)).default
+    }
+  };
 }
